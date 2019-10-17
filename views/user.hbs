@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" class="cv_db_full_height">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.ico" />
+
+    <!-- Title CSS -->
+    <title>Linchpins Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Fontawesome Sytle CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Dashboard Sytle CSS -->
+    <link rel="stylesheet" href="/assets/css/db_style.css">
+
+  </head>
+  <body class="cv_db_full_height">
+
+    <div class="allWrapper cv_db_full_height">
+
+      <header class="header cv_db_header" id="header">
+        <div class="container-fluid">
+          <div class="row justify-content-between">
+            <div class="col-sm-2">
+              <div class="row">
+                <div class="col-auto">
+                  <button class="cv_db_aside_nav_toggle_btn"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+                </div><!-- end of col-auto -->
+
+                <div class="col">
+                  <div class="cv_db_logo">
+                    <a href="/"><img src="/assets/images/linch_logo.svg" alt="Logo" /></a>
+                  </div><!-- end of db_logo -->
+                </div><!-- end of col -->
+              </div><!-- end of row -->
+            </div><!-- end of col2 -->
+
+            <div class="col-sm-4">
+              <ul class="navbar-nav cv_db_user_nav justify-content-end">
+                <li>
+                  <div class="cv_db_ueser_card" id="user_card">
+                    <a href="#" class="cv_db_dropdown dropdown-toggle" id="cv_bd_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <div class="cv_db_user_info">
+                        <h3>Super Admin</h3>
+                      </div><!-- end of cv_db_user_info -->
+                      <div class="cv_db_user_avater">
+                        <span>SA</span>
+                      </div><!-- end of cv_db_user_avater -->
+                    </a>
+                    <div class="cv_bd_dropdown_menu cv_db_admin_nav dropdown-menu cv_db_slideIn" aria-labelledby="cv_bd_dropdown">
+                      <a href="/users/logout" class="cv_db_dropdown_item dropdown-item"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    </div>
+                  </div><!-- end of cv_db_user_card -->
+                </li><!-- end of li -->
+
+              </ul><!-- end of cv_db_user_nav -->
+            </div><!-- end of col4 -->
+
+          </div><!-- end of row -->
+        </div><!-- end of container -->
+      </header><!-- end of header -->
+
+      <aside class="cv_db_aside_area clearfix cv_db_full_height cv_db_scrollbar" id="aside_area">
+
+        <div class="cv_db_sidebar_nav navbar navbar-vertical navbar-expand-xs fixed-left navbar-expand-md navbar-light bg-white clearfix" id="sidebar_nav">
+
+          <ul class="navbar-nav cv_db_sidebar_menu">
+
+            <li class="nav-item">
+              <a class="nav-link" href="/settings/index">
+                <i class="fa fa-futbol-o" aria-hidden="true"></i> SMTP Settings
+              </a>
+            </li><!-- end of li -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="/settings/mail">
+                <i class="fa fa-envelope" aria-hidden="true"></i> Mail Settings
+              </a>
+            </li><!-- end of li -->
+
+            <li class="nav-item">
+              <a class="nav-link active" href="/settings/user">
+                <i class="fa fa-user" aria-hidden="true"></i> User Settings
+              </a>
+            </li><!-- end of li -->
+
+          </ul><!-- end of navbar-nav -->
+        </div><!-- end of cv_db_sidebar_nav -->
+
+      </aside><!-- end of cv_db_aside_area -->
+
+      <main class="cv_db_main_content clearfix cv_db_full_height cv_db_scrollbar" id="main_content">
+
+        <section class="cv_db_content_area clearfix" id="content-area">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-header">
+                    User Settings
+                    <button id="edit" class="btn btn-success pull-right">Edit</button>
+                  </div><!-- end of card-header -->
+
+                  <div class="card-body">
+                    <form action="/users/signup" method="POST">
+
+                      <div class="form-group">
+                        <label for="user-name">User Name</label>
+                        <input type="text" name="username" class="form-control palin-field" id="user-name" aria-describedby="user-name" placeholder="User Name" value="{{auth.user}}" readonly='true'>
+                      </div><!-- end of form-group -->
+
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control palin-field" id="password" placeholder="Password" readonly="true">
+                      </div><!-- end of form-group -->
+
+                      <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" name="confirm_password" class="form-control palin-field" id="confirm-password" placeholder="Confirm Password" readonly="true">
+                      </div><!-- end of form-group -->
+                      {{!-- <button type="submit" class="btn btn-primary">Save</button> --}}
+                      <input type="submit" class="btn btn-primary" value="Save" />
+                    </form><!-- end of form -->
+                      {{#if success.success}}
+                    <br>
+                   <div id="alerts" class="alert alert-success alert-dismissible fade show" role="alert">
+                   <strong>Success</strong> {{success.message}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                    </div>
+                    {{/if}}
+
+                    {{#if error.status}}
+                        <span id="error" class="text-danger h6 pt-2 d-block">{{error.message}}</span>
+                    {{/if}}
+
+                  </div><!-- end of card-body -->
+                </div><!-- end of card -->
+              </div><!-- end of col6 -->
+            </div><!-- end of row -->
+          </div><!-- end of container-fluid -->
+        </section><!-- end of cv_db_content_area -->
+
+      </main><!-- end of cv_db_main_content -->
+    </div><!-- end of allWrapper -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/assets/js/db_style.js"></script>
+    <script>
+       $('#edit').on('click',function(){
+        $('input').toggleClass('palin-field');
+        $('input').attr('readonly',false);
+        $('input[type=submit]').attr('disabled',false)
+      })
+      setTimeout(function(){
+        $('#alerts').remove();
+        $('.error').remove();
+        },3000) 
+    </script>
+  </body>
+</html>

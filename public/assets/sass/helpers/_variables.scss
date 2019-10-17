@@ -1,0 +1,37 @@
+// Grayscale - naming with lightness (from HSL) color value
+$gray_hsl10:    hsl(0,0,10);
+$gray_hsl30:    hsl(0,0,30);
+$gray_hsl50:    hsl(0,0,50);
+$gray_hsl70:    hsl(0,0,70);
+
+// Colors
+$blue_main:     #16C1F3;
+$blue_darker:   darken($blue_main, 10%);
+
+// Colors on elements
+$main_text:     $gray_hsl10;
+
+// Typography
+$font_primary:   'Open Sans', sans-serif;
+$font_secondary: 'Comfortaa', cursive;
+
+// z-index
+$zIndex_submenu:    10;
+$zIndex_mobileNav:  40;
+$zIndex_modal:      50;
+
+// Media Queries for flexbox grid
+$screen_xxs_start:  475px;
+$screen_xxs_end:    575px;
+$screen_xs_start:   576px;
+$screen_xs_end:     767px;
+$screen_sm_start:   768px;
+$screen_sm_end:     991px;
+$screen_md_start:   992px;
+$screen_md_end:     1199px;
+$screen_lg_start:   1200px;
+$screen_lg_end:     1599px;
+$screen_xlg_start:  1600px;
+
+// External
+$imagesFolder: '../images';

@@ -1,0 +1,68 @@
+.btn-oval-red {
+    border-radius: 26.5px;
+    background: #f7233c url("../images/icon-arrow-white.svg") no-repeat right 2rem center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    padding: 1.3rem 5.2rem 1.3rem 2.6rem;
+    color: #ffffff;
+    font-family: 'Lexend Deca';
+    font-size: 1.5rem;
+    font-weight: normal;
+    white-space: nowrap;
+    display: inline-block;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        box-shadow: 0 4px 10px rgba(229, 0, 0, 0.4);
+        background-color: #cf0000;
+    }
+    &:active {
+        color: #f1b2b2;
+        box-shadow: 0 2px 6px rgba(229, 0, 0, 0.5);
+        background-color: #cf0000;
+    }
+}
+
+.btn-oval-white {
+    border-radius: 26.5px;
+    background: #ffffff url("../images/icon-arrow-red.svg") no-repeat right 2rem center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    padding: 1.3rem 5.2rem 1.3rem 2.6rem;
+    color: #ff3b3a;
+    font-family: 'Lexend Deca';
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    &:focus {
+        outline: none;
+    }
+}
+
+.footer-btn {
+    border: none;
+    background: transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    opacity: 0.26;
+    font-family: 'Lexend Deca';
+    font-size: 2.9rem;
+    color: #000000;
+    align-self: flex-end;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 665px) {
+    .footer-btn {
+        font-size: 2.3rem;
+    }
+}

@@ -1,0 +1,6 @@
+html, body, .cv_db_full_height{
+	height: 100%;
+}
+.bg_gradient{
+	background-image: linear-gradient(to left bottom, #f5f7fa, #e8edf4, #dce3ee, #cfd9e8, #c3cfe2);
+}

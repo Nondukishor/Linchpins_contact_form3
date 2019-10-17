@@ -1,0 +1,32 @@
+.validation {
+    margin-top: 0.6rem;
+    color: red;
+    text-align: right;
+}
+
+.hidden {
+    display: none!important;
+}
+
+#form-success {
+    text-align: left;
+    font-size: 3.6rem;
+    padding: 0 15rem;
+    margin-top: 25rem;
+    margin-bottom: 14rem;
+    display: inline-block;
+}
+
+@media (max-width: 880px) {
+    #form-success {
+        padding: 0 4rem;
+    }
+}
+
+@media (max-width: 665px) {
+    #form-success {
+        padding: 0 2rem;
+        margin-top: 0rem;
+        margin-bottom: 8rem;
+    }
+}

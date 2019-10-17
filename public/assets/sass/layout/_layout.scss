@@ -1,0 +1,186 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $font_primary;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: $main_text;
+    background-color: #FFFFFF;
+}
+
+input,
+textarea {
+    @include placeholder($gray_hsl70);
+}
+
+a {
+    text-decoration: none;
+}
+
+.red-line {
+    width: 5rem;
+    height: 0.2rem;
+    background-color: #ff001f;
+}
+
+.red-line-small {
+    width: 3.5rem;
+    height: 0.2rem;
+    background-color: #ff001f;
+}
+
+.black-line {
+    width: 5rem;
+    height: 0.2rem;
+    background-color: #000000;
+}
+
+.black-line-small {
+    width: 3.5rem;
+    height: 0.2rem;
+    background-color: #000000;
+}
+
+.footer {
+    //max-width: 110.4rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .footer-input {
+        background-color: #ffffff;
+        width: 100%;
+        border: none;
+        font-family: Martel;
+        font-size: 2.7rem;
+        font-weight: 200;
+        padding: 3rem 0;
+        outline: none;
+        caret-color: #000000;
+        color: #000000;
+        border-bottom: 1px solid #cccccc;
+        &::placeholder {
+            font-family: Martel;
+            font-size: 2.7rem;
+            font-weight: 200;
+            color: #979797;
+        }
+    }
+    .attach-file {
+        /* background: url(../images/paperclip-gray.svg) no-repeat right bottom 4rem;
+        overflow: hidden; */
+        padding-right: 5rem;
+    }
+    .form-attach-btn{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5rem;
+        .image-upload {
+            width: auto;
+            position: relative;
+            /* bottom: 12rem;
+            right: 15rem; */
+            label{
+                cursor: pointer;
+                font-family: Martel-UltraLight;
+                font-size: 15px;
+                color: #666666;
+                letter-spacing: 0;
+                line-height: 49px;
+            }
+            .label-active {
+                color: #000000; 
+            }
+            input {
+                display: none;
+            }
+            img {
+                cursor: pointer;
+                max-width: 15px;
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+.bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15rem;
+    margin-bottom: 11.4rem;
+    padding: 0 15rem;
+    .logo-footer {
+        font-family: 'Lexend Deca';
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: #000000;
+    }
+    .contact-phone {
+        display: none;
+        border-radius: 23.5px;
+        background-color: #fdeeee;
+        padding: 1.3rem 2.1rem;
+        align-items: center;
+        span {
+            font-family: 'Lexend Deca';
+            font-size: 1.5rem;
+            color: #ff001f;
+            margin-left: 1rem;
+        }
+    }
+    .contact-phone-black {
+        display: flex;
+        align-items: center;
+        span {
+            font-family: 'Lexend Deca';
+            font-size: 1.4rem;
+            color: #000000;
+            margin-left: 1rem;
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .footer {
+        padding: 0 4rem;
+    }
+    .bottom-wrapper {
+        padding: 0 4rem;
+    }
+}
+
+@media (max-width: 665px) {
+    .footer {
+        padding: 0 2rem 0 2.5rem;
+        .footer-input {
+            font-size: 1.9rem;
+            &::placeholder {
+                font-size: 1.9rem;
+            }
+        }
+    }
+    .bottom-wrapper {
+        padding: 0 2rem;
+        margin-top: 13.5rem;
+        margin-bottom: 4rem;
+        .contact-phone {
+            display: flex;
+        }
+        .contact-phone-black {
+            display: none;
+        }
+    }
+}
